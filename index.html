@@ -166,22 +166,42 @@ ol.description li {
   font-size: 17px;
   color: #444;
 }
-    .main-title {
+  .sliding-title {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.sliding-title h1,
+.sliding-title h2 {
+  display: inline-block;
+  animation: marquee 25s linear infinite;
+  margin: 0;
+  padding: 0 10px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.sliding-title h1 {
   font-size: 32px;
   color: #1976d2;
-  font-weight: 700;
-  margin-bottom: 5px;
-  text-align: center;
 }
 
-.sub-title {
+.sliding-title h2 {
   font-size: 20px;
   color: #444;
-  font-weight: 600;
-  margin-bottom: 15px;
-  text-align: center;
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
   </style>
 </head>
@@ -191,7 +211,7 @@ ol.description li {
     <img src="Logo.jpg" alt="Logo" class="logo">
 
     <!-- Heading -->
-  <h1 class="main-title">National Health Research Setting</h1>
+<h1 class="main-title">National Health Research Setting</h1>
 <h2 class="sub-title">Agenda Ministry of Health</h2>
 <div class="title-divider"></div>
 
@@ -233,6 +253,7 @@ ol.description li {
   </div>
 </body>
 </html>
+
 
 
 
