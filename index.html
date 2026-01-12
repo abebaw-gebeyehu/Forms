@@ -165,42 +165,37 @@ ol.description li {
   font-size: 17px;
   color: #444;
 }
-  .sliding-title {
-  overflow: hidden;
-  white-space: nowrap;
-  display: inline-block;
-  position: relative;
+.sliding-title-wrapper {
   width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* center horizontally */
 }
 
-.sliding-title h1,
-.sliding-title h2 {
+.sliding-title-content {
   display: inline-block;
+  white-space: nowrap;
   animation: marquee 25s linear infinite;
-  margin: 0;
-  padding: 0 10px;
-  font-weight: 700;
-  text-align: left;
+  text-align: center;
+  font-family: Arial, sans-serif; /* same as your original page */
+  font-weight: 700;               /* match your h1 */
+  font-size: 32px;                /* main title size */
+  color: #1976d2;                 /* main title color */
 }
 
-.sliding-title h1 {
-  font-size: 32px;
-  color: #1976d2;
+.sliding-title-content span {
+  display: block;  /* each line on its own row */
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 
-.sliding-title h2 {
-  font-size: 20px;
-  color: #444;
-}
-
+/* Marquee animation */
 @keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
+
 
   </style>
 </head>
@@ -210,9 +205,11 @@ ol.description li {
     <img src="Logo.jpg" alt="Logo" class="logo">
 
     <!-- Heading -->
-<div class="sliding-title">
-  <h1>National Health Research Agenda Setting</h1>
-  <h2> Ministry of Health</h2>
+<div class="sliding-title-wrapper">
+  <div class="sliding-title-content">
+    <span>National Health Research Setting</span><br>
+    <span>Agenda Ministry of Health</span>
+  </div>
 </div>
 <div class="title-divider"></div>
 
@@ -254,6 +251,7 @@ ol.description li {
   </div>
 </body>
 </html>
+
 
 
 
